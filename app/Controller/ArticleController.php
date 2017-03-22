@@ -23,7 +23,7 @@ class ArticleController extends Controller
 	 * Page liste d'articles
 	 */
 	public function ListeArticle(){
-		$this->show('Article/ListeArticle');
+		$listeArticle = $this->show('Article/ListeArticle');
 	}
 
 }
