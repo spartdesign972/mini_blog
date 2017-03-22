@@ -12,5 +12,8 @@
 		['GET', '/ListeArticle', 'Article#ListeArticle', 'article_listearticle'],
 
 		//  route vers le traitement de formulaire
-		['POST', '/PostArticle', 'Article#PostArticle', 'article_postarticle']
+		['POST', '/PostArticle', 'Article#PostArticle', 'article_postarticle'],
+
+		// route vers le traitement et l'affichage du details d'un article
+		['POST|GET', '/DetailArticleid/[:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
 	);

@@ -4,7 +4,7 @@
 	
 	<div id="result"></div>
 
-	<form method="POST" class="form-horizontal" role="form">
+	<form method="POST" class="form-horizontal" role="form" >
 			<div class="form-group">
 				<legend>Ajouter un article</legend>
 			</div>
