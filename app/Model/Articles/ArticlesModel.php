@@ -2,12 +2,21 @@
 
 namespace Model\Articles;
 
+use \W\Model\Model;
 /**
 * 
 */
-class ArticlesModel extends \W\Model\Model
+class ArticlesModel extends Model
 {
-		$this->insert($_POST);
+	public function insertPost($post){
+
+		return $this->insert($post);
+
+	}
+
+	public function findAllArticle(){
+		return $this->findAll();
+	}
 }
 
 

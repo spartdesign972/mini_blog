@@ -1,8 +1,10 @@
 <?php $this->layout('MyBlog_layout', ['title' => 'Ajout d\'articles']) ?>
 
 <?php $this->start('main_content') ?>
+	
+	<div id="result"></div>
 
-	<form action="" method="POST" class="form-horizontal" role="form">
+	<form method="POST" class="form-horizontal" role="form">
 			<div class="form-group">
 				<legend>Ajouter un article</legend>
 			</div>
