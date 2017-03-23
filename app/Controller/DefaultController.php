@@ -12,7 +12,7 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
-		$this->show('default/my_home_page');
+		$this->show('Front/default/my_home_page');
 	}
 
 }

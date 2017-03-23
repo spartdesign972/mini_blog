@@ -19,7 +19,7 @@ class ArticleController extends Controller
 	 * Page formulaire d'ajout d'articles
 	 */
 	public function AjoutArticle(){
-		$this->show('Article/ajoutArticle');
+		$this->show('Front\Article/ajoutArticle');
 	}
 
 
@@ -33,7 +33,7 @@ class ArticleController extends Controller
 		
 		$liste = $allArticle->findAllArticle();
 
-		$this->show('Article/ListeArticle', ['liste' => $liste]);
+		$this->show('Front\Article/ListeArticle', ['liste' => $liste]);
 	}
 
 
@@ -44,7 +44,7 @@ class ArticleController extends Controller
 		if(empty($article)){
 			$this->showNotFound();
 		}
-		$this->show('Article/DetailArticle', ['article' => $article]);
+		$this->show('Front\Article/DetailArticle', ['article' => $article]);
 	}
 
 
