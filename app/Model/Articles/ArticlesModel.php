@@ -21,6 +21,11 @@ class ArticlesModel extends Model
 	public function findArticle($id){
 		return $this->find($id);
 	}
+
+	public function delArticle($id){
+		return $this->delete($id);
+	}
+
 }
 
 

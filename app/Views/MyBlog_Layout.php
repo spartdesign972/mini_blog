@@ -10,6 +10,14 @@
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/Blogstyle.css') ?>">
 
+		<!-- dist/sweetalert.css -->
+	<link rel="stylesheet" href="../bower_components/bootstrap-sweetalert/dist/sweetalert.css">
+
+	<!-- dist/sweetalert.js -->
+    <script src="../bower_components/bootstrap-sweetalert/dist/sweetalert.js"></script>
+
+	<?= $this->section('css/js') ?>
+
 
 </head>
 <body>
@@ -23,14 +31,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./">WF3 BLOG</a>
+				<a class="navbar-brand" href="<?=$this->url('default_home')?>">WF3 BLOG</a>
 			</div>
 	
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="AjoutArticle">Ajouter article</a></li>
-					<li><a href="ListeArticle">Liste des Articles</a></li>
+					<li><a href="<?=$this->url('article_ajoutarticle')?>">Ajouter article</a></li>
+					<li><a href="<?=$this->url('article_listearticle')?>">Liste des Articles</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div>

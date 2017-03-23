@@ -15,5 +15,7 @@
 		['POST', '/PostArticle', 'Article#PostArticle', 'article_postarticle'],
 
 		// route vers le traitement et l'affichage du details d'un article
-		['POST|GET', '/DetailArticleid/[:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
+		['POST|GET', '/DetailArticleid/[i:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
+		
+		['POST|GET', '/DeleteArticleid/[i:id]', 'Article#DeleteArticleid', 'article_deletearticleid'],
 	);
