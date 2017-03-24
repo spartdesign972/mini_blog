@@ -19,7 +19,7 @@ class ArticleController extends Controller
 	 * Page formulaire d'ajout d'articles
 	 */
 	public function AjoutArticle(){
-		$this->show('Front\Article/ajoutArticle');
+		$this->show('Front\Article/ajout_article');
 	}
 
 
@@ -33,7 +33,7 @@ class ArticleController extends Controller
 		
 		$liste = $allArticle->findAllArticle();
 
-		$this->show('Front\Article/ListeArticle', ['liste' => $liste]);
+		$this->show('Front/Article/liste_article', ['liste' => $liste]);
 	}
 
 
@@ -44,7 +44,7 @@ class ArticleController extends Controller
 		if(empty($article)){
 			$this->showNotFound();
 		}
-		$this->show('Front\Article/DetailArticle', ['article' => $article]);
+		$this->show('Front/Article/detail_article', ['article' => $article]);
 	}
 
 
@@ -67,8 +67,6 @@ class ArticleController extends Controller
 	    $err = [
 	        (!v::notEmpty()->alpha('-.')->length(2, 30)->validate($post['title'])) ? 'Le titre' : null,
 	        (!v::notEmpty()->alpha('-.')->length(5)->validate($post['content'])) ? 'Le content' : null,
-	    //     (!v::notEmpty()->email()->validate($post['email'])) ? 'L\'adresse email est invalide' : null,
-	    //     (!v::notEmpty()->length(8, 30)->validate($post['password'])) ? 'Le mot de passe est invalide' : null,
 	    ];
 
 	    $errors = array_filter($err);

@@ -40,6 +40,10 @@
 					<li><a href="<?=$this->url('article_ajoutarticle')?>">Ajouter article</a></li>
 					<li><a href="<?=$this->url('article_listearticle')?>">Liste des Articles</a></li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Se Connecter</a></li>
+					<li><a href=" <?= $this->url('users_suscribe') ?> ">S'inscrire</a></li>
+				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div>
 	</nav>

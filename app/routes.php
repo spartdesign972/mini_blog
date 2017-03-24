@@ -18,4 +18,13 @@
 		['POST|GET', '/DetailArticleid/[i:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
 		
 		['POST|GET', '/DeleteArticleid/[i:id]', 'Article#DeleteArticleid', 'article_deletearticleid'],
+
+
+		// Routes pour la gestion des utilisateurs
+
+		['POST|GET', '/suscribe', 'Users#suscribUser', 'users_suscribe'],
+		
+		['POST', '/registerUser', 'Users#PostUser', 'users_register'],
+
+
 	);

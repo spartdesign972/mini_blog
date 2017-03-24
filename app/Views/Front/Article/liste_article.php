@@ -40,13 +40,10 @@
 			// var id = $(this).data('id');
 			var delurl = $(this).data('article');
 
-
-			console.log(delurl);
-
 			var ligneTab = $(this).parent().parent();
 
 			swal({
-			  title: "supprimer cet utilisateur ?",
+			  title: "supprimer cet article ?",
 			  text: "",
 			  type: "info",
 			  showCancelButton: true,
