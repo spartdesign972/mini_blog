@@ -29,6 +29,7 @@
 							</tbody>
 						</table>
 <?php $this->stop('main_content') ?>
+
 <?php $this->start('script') ?>
 	
 	<script>

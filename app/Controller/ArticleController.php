@@ -18,9 +18,9 @@ class ArticleController extends Controller
 	/**
 	 * Page formulaire d'ajout d'articles
 	 */
-	public function AjoutArticle(){
-		$this->show('Front\Article/ajout_article');
-	}
+	// public function AjoutArticle(){
+	// 	$this->show('Front\Article/ajout_article');
+	// }
 
 
 
@@ -106,9 +106,8 @@ class ArticleController extends Controller
 					$post['url_picture'] = $upload_dir.$save_name.$ext;
 				}
 			}
-		  
-		}
-    if(count($errors) === 0){
+
+			if(count($errors) === 0){
 
     	$result = new ArticlesModel();
       $result->insertPost($post);
@@ -119,10 +118,11 @@ class ArticleController extends Controller
     }else{
     	echo implode('<br>',$errors);
     }
+		  
+		}else{
+			$this->show('Front\Article/ajout_article');
+		}
 
-		// $this->show('Article/ajoutArticle');
 	}
-
-
 
 }
