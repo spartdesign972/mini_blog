@@ -9,20 +9,20 @@
 		// ['GET', '/AjoutArticle', 'Article#AjoutArticle', 'article_ajoutarticle'],
 		
 		// route vers la page de liste des articles
-		['POST|GET', '/ListeArticle', 'Article#ListeArticle', 'article_listearticle'],
+		['GET', '/ListeArticle', 'Article#ListeArticle', 'article_listearticle'],
 
 		//  route vers le traitement de formulaire
 		['POST|GET', '/PostArticle', 'Article#PostArticle', 'article_postarticle'],
 
 		// route vers le traitement et l'affichage du details d'un article
-		['POST|GET', '/DetailArticleid/[i:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
+		['GET', '/DetailArticleid/[i:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
 		
-		['POST|GET', '/DeleteArticleid/[i:id]', 'Article#DeleteArticleid', 'article_deletearticleid'],
+		['POST', '/DeleteArticleid/[i:id]', 'Article#DeleteArticleid', 'article_deletearticleid'],
 
 
 		// Routes pour la gestion des utilisateurs
 		['POST|GET', '/suscribe', 'Users#PostUser', 'users_suscribe'],
-
+		['GET', '/logout', 'Users#Logout', 'user_logout'],
 
 		['POST|GET', '/connection', 'Users#ConnectUser', 'login'],
 	);

@@ -16,15 +16,6 @@ class ArticleController extends Controller
 {
 
 	/**
-	 * Page formulaire d'ajout d'articles
-	 */
-	// public function AjoutArticle(){
-	// 	$this->show('Front\Article/ajout_article');
-	// }
-
-
-
-	/**
 	 * Page qui liste les articles
 	 */
 	public function ListeArticle(){
@@ -58,6 +49,9 @@ class ArticleController extends Controller
 	// Traitement du formulaire de postArticle
 	public function PostArticle(){
 		
+		// Accessible que pour l'admin
+		$this->allowTo('admin');
+
 		$post = [];
 		$upload_dir = 'upload/';
 		$maxSize = (1024 * 1000) * 2;
@@ -65,8 +59,8 @@ class ArticleController extends Controller
 		if(!empty($_POST)) {
 	    $post = array_map('trim', array_map('strip_tags', $_POST));
 	    $err = [
-	        (!v::notEmpty()->alpha('-.')->length(2, 30)->validate($post['title'])) ? 'Le titre' : null,
-	        (!v::notEmpty()->alpha('-.')->length(5)->validate($post['content'])) ? 'Le content' : null,
+	        (!v::notEmpty()->length(2, 30)->validate($post['title'])) ? 'Titre incorrect doit faire entre 2 et 30 carateres' : null,
+	        (!v::notEmpty()->length(5)->validate($post['content'])) ? 'Contenus de l\'article incorrect, doit faire plus de 5 carateres' : null,
 	    ];
 
 	    $errors = array_filter($err);

@@ -1,4 +1,4 @@
-<?php $this->layout('MyBlog_layout', ['title' => 'Liste d\'articles']) ?>
+<?php $this->layout('MyBlog_layout', ['title' => '']) ?>
 
 
 <?php $this->start('main_content') ?>
@@ -59,7 +59,7 @@
 					success: function(res){	
 					}
 				});
-			    swal('utilisateur supprimé');
+			    swal('Article supprimé');
 			    ligneTab.fadeOut('slow').remove;
 			  }, 200);
 			});

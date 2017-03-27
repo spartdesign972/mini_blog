@@ -41,13 +41,17 @@
 					<li><a href="<?=$this->url('article_listearticle')?>">Liste des Articles</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+					<?php if(empty($w_user)): ?>
 					<li><a href=" <?= $this->url('login') ?> ">Se Connecter</a></li>
 					<li><a href=" <?= $this->url('users_suscribe') ?> ">S'inscrire</a></li>
+				<?php else: ?>
+					<li><a href="#"><?php echo 'Bonjour : '.$w_user['lastname'] ?> </a></li>
+					<li><a href=" <?php echo $this->url('user_logout') ?> ">Vous Deconnecter</a></li>
+				<?php endif; ?>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div>
 	</nav>
-
 	<div class="container">
 		<header>
 			<h1 class="text-center"><?= $this->e($title) ?></h1>

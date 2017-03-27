@@ -18,4 +18,8 @@ class UsersModel extends Model
 		return $this->findAll();
 	}
 
+	public function findUser($id){
+		return $this->find($id);
+	}
+
 }

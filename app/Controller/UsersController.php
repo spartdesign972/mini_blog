@@ -77,13 +77,23 @@ class UsersController extends Controller
 			if(count($errors) > 0){		
 				echo implode('<br>',$errors);
 			}else {
-				$user = new AuthentificationModel();
-				if($user->isValidLoginInfo($post['email'], $post['password'])){
-					echo 'ok';
+				$ident = new AuthentificationModel();
+				$id = $ident->isValidLoginInfo($post['email'], $post['password']);
+				if(isset($id)){
+					$user = new UsersModel();
+					$currentUser = $user->findUser($id);
+					$ident->logUserIn($currentUser);
+					echo 'ok Bonjour : '.$currentUser['lastname'];
 				}
 			}
-	}else{
-		$this->show('Front/Users/connect_user');
+		}else{
+			$this->show('Front/Users/connect_user');
+		}
 	}
-}
+
+	public function Logout(){
+		$user = new AuthentificationModel();
+		$user->logUserOut();
+		$this->redirectToRoute('article_listearticle');
+	}
 }
