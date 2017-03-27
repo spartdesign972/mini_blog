@@ -22,6 +22,7 @@
 
 		// Routes pour la gestion des utilisateurs
 		['POST|GET', '/suscribe', 'Users#PostUser', 'users_suscribe'],
+		
 		['GET', '/logout', 'Users#Logout', 'user_logout'],
 
 		['POST|GET', '/connection', 'Users#ConnectUser', 'login'],

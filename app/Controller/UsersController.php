@@ -83,13 +83,15 @@ class UsersController extends Controller
 					$user = new UsersModel();
 					$currentUser = $user->findUser($id);
 					$ident->logUserIn($currentUser);
-					echo 'ok Bonjour : '.$currentUser['lastname'];
+					$this->redirectToRoute('article_postarticle');
 				}
 			}
 		}else{
 			$this->show('Front/Users/connect_user');
 		}
 	}
+
+
 
 	public function Logout(){
 		$user = new AuthentificationModel();
