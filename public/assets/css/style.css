@@ -24,3 +24,7 @@ h1 {
 h2 {
 	color: #66D9EF;
 }
+
+.navbar{
+	border-radius: none;
+}

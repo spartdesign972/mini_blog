@@ -42,8 +42,17 @@ class UsersController extends Controller
 			}
 			else {
 				$post['password'] = password_hash($post['password'], PASSWORD_DEFAULT);
+				
+				$data = [
+					'firstname' => ucfirst($post['firstname']),
+					'lastname'  => $post['lastname'],
+					'email'     => $post['email'],
+					'password'  => $post['password'],
+					'role'      => $post['role'],
+				];
+
 				$insert = new UsersModel();
-				$insert->insertUser($post);
+				$insert->insertUser($data);
 				echo 'utilisateur ajouter !';
 			}
 				
