@@ -49,7 +49,7 @@
 		
 		<div class="well">
 			<div class="content">
-				<h4>Contenus : </h4>
+				<h4>Commentaire : </h4>
 				<p> <?= $Value['content'] ?> </p>
 			</div>
 			<hr>
@@ -79,16 +79,16 @@ $(function() {
       	console.log(url);
       $.ajax({
 					type: 'post',
-					dataType: 'json',
+					// dataType: 'json',
 					url: url,
 					data: data,
 					success: function(res) {
-             	// $('#result').html(res).fadeOut(15600);
-              // $form[0].reset();
+             	$('#result').html(res).fadeOut(15600);
+              $form[0].reset();
               // res.each(function(index){
               // 		condole.log(index + " : "+ $(this).text);
               // });
-              console.log(res);
+
               
           }
       });
