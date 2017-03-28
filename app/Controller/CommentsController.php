@@ -37,7 +37,7 @@ class CommentsController extends Controller
 		    	];
 		      $result->insertComment($data);
 
-		      echo 'Commentaire Ajouter !';
+		      echo 'Commentaire Ajouter';
 
 
 		    }else{

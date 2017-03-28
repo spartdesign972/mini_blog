@@ -61,6 +61,9 @@
 	} ?>
 <?php $this->stop('main_content') ?>
 
+
+
+
 <?php $this->start('script') ?>
 
 <script>
@@ -76,11 +79,17 @@ $(function() {
       	console.log(url);
       $.ajax({
 					type: 'post',
+					dataType: 'json',
 					url: url,
 					data: data,
 					success: function(res) {
-              $('#result').html(res).fadeOut(15600);
-              $form[0].reset();
+             	// $('#result').html(res).fadeOut(15600);
+              // $form[0].reset();
+              // res.each(function(index){
+              // 		condole.log(index + " : "+ $(this).text);
+              // });
+              console.log(res);
+              
           }
       });
   });
