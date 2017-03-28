@@ -31,7 +31,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<?=$this->url('default_home')?>">WF3 BLOG</a>
+				<a class="navbar-brand" href="<?=$this->url('default_home')?>">WF3 BLOG - ADMIN -</a>
 			</div>
 	
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,13 +41,8 @@
 					<li><a href="<?=$this->url('article_listearticle')?>">Liste des Articles</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<?php if(empty($w_user)): ?>
-					<li><a href=" <?= $this->url('login') ?> ">Se Connecter</a></li>
-					<li><a href=" <?= $this->url('users_suscribe') ?> ">S'inscrire</a></li>
-				<?php else: ?>
-					<li><a href="<?php echo $this->url('users_admin') ?>"><?php echo 'Bonjour : '.$w_user['lastname'] ?> </a></li>
+					<li><a href=" <?php echo $this->url('users_admin') ?> "><?php echo 'Bonjour : '.$w_user['lastname'] ?> </a></li>
 					<li><a href=" <?php echo $this->url('user_logout') ?> ">Vous Deconnecter</a></li>
-				<?php endif; ?>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div>

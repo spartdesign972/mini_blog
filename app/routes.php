@@ -15,10 +15,11 @@
 		['POST|GET', '/PostArticle', 'Article#PostArticle', 'article_postarticle'],
 
 		// route vers le traitement et l'affichage du details d'un article
-		['GET', '/DetailArticleid/[i:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
+		['POST|GET', '/DetailArticleid/[i:id]', 'Article#DetailArticleid', 'article_detailarticleid'],
 		
 		['POST', '/DeleteArticleid/[i:id]', 'Article#DeleteArticleid', 'article_deletearticleid'],
 
+		['POST|GET', '/commentArticle', 'Comments#CommentArticle', 'comment_commentArticle'],
 
 		// Routes pour la gestion des utilisateurs
 		['POST|GET', '/suscribe', 'Users#PostUser', 'users_suscribe'],
@@ -26,4 +27,7 @@
 		['GET', '/logout', 'Users#Logout', 'user_logout'],
 
 		['POST|GET', '/connection', 'Users#ConnectUser', 'login'],
+
+
+		['GET|POST', '/admin', 'Users#Admin', 'users_admin'],
 	);

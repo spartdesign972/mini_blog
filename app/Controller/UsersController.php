@@ -92,7 +92,7 @@ class UsersController extends Controller
 					$user = new UsersModel();
 					$currentUser = $user->findUser($id);
 					$ident->logUserIn($currentUser);
-					$this->redirectToRoute('article_postarticle');
+					$this->redirectToRoute('users_admin');
 				}
 			}
 		}else{
@@ -106,5 +106,9 @@ class UsersController extends Controller
 		$user = new AuthentificationModel();
 		$user->logUserOut();
 		$this->redirectToRoute('article_listearticle');
+	}
+
+	public function Admin(){
+		$this->show('Back/administration');
 	}
 }

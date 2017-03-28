@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 
 use \Model\Articles\ArticlesModel;
+use \Model\Comments\CommentsModel;
 
 use \Respect\Validation\Validator as v;
 use \Intervention\Image\ImageManagerStatic as Image;
@@ -32,11 +33,22 @@ class ArticleController extends Controller
 		
 		$detailArticle = new ArticlesModel();
 		$article = $detailArticle->find($id);
+
+		$com = new CommentsModel();
+		$listCom = $com->listeComments($id);
+
+		$param = [
+			'article' => $article,
+			'listCom' => (!empty($listCom)) ? $listCom : null,
+		];
+		
 		if(empty($article)){
 			$this->showNotFound();
 		}
-		$this->show('Front/Article/detail_article', ['article' => $article]);
+		$this->show('Front/Article/detail_article', $param);
 	}
+
+
 
 
 	public function DeleteArticleid($id){
