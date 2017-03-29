@@ -45,4 +45,11 @@ class CommentsController extends Controller
 		    }
 			}
 	}
+
+	public function SupprCommentid($id){
+
+		$com = new CommentsModel();
+		$com->supprComment($id);
+
+	}
 }
