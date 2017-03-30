@@ -30,4 +30,12 @@
 
 
 		['GET|POST', '/admin', 'Users#Admin', 'users_admin'],
+		
+
+
+
+		['GET|POST', '/mail', 'SendMail#mailTo', 'sendmail_mailTo'],
+
+
+
 	);

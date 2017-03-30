@@ -53,7 +53,7 @@
 				<p> <?= $Value['content'] ?> </p>
 			</div>
 			<hr>
-			<h4>Poster par : <?=$Value['lastname']  ?> </h4>
+			<h4>Poster par : <?=$Value['lastname'] ?> </h4>
 
 		</div>
 		<br>
