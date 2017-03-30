@@ -20,6 +20,10 @@
 		['POST', '/DeleteArticleid/[i:id]', 'Article#DeleteArticleid', 'article_deletearticleid'],
 
 		['POST|GET', '/commentArticle', 'Comments#CommentArticle', 'comment_commentArticle'],
+		
+		['POST|GET', '/suppComment/[i:id]', 'Comments#SupprCommentid', 'comment_supprComment'],
+
+
 
 		// Routes pour la gestion des utilisateurs
 		['POST|GET', '/suscribe', 'Users#PostUser', 'users_suscribe'],

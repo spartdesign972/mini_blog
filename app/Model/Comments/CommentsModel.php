@@ -15,7 +15,7 @@
 				
 			$idArticle = (int)$idArticle;
 
-			$sql = 'SELECT C.*, U.lastname  FROM ' . $this->table .' as C LEFT JOIN users as U ON C.id_user = U.id WHERE id_article = :idArticle' ;
+			$sql = 'SELECT C.*, U.lastname, U.role  FROM ' . $this->table .' as C LEFT JOIN users as U ON C.id_user = U.id WHERE id_article = :idArticle' ;
 			$sth = $this->dbh->prepare($sql);
 			
 			$sth->bindValue(':idArticle', $idArticle, \PDO::PARAM_INT);
@@ -27,9 +27,13 @@
 		}
 
 
-
 		public function insertComment($post){
 			return $this->insert($post);
+		}
+
+
+		public function supprComment($id){
+			return $this->delete($id);
 		}
 	}
 

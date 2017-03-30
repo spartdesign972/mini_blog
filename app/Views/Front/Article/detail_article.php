@@ -53,7 +53,20 @@
 				<p> <?= $Value['content'] ?> </p>
 			</div>
 			<hr>
+
 			<h4>Poster par : <?=$Value['lastname'] ?> </h4>
+
+			<div class="row">
+				<div class="col-sm-8">
+					<h4>Poster par : <?=$Value['lastname']  ?> </h4>
+				</div>
+				<?php if($w_user['role'] === $Value['role']): ?>
+				<div class="col-sm-4">
+					<a href="#" class="btn btn-danger btnSupprComment" data-delCom="<?=$this->url('comment_supprComment', ['id' => $Value['id']])?>">Supprimer</a>
+				</div>
+			<?php endif; ?>
+			</div>
+
 
 		</div>
 		<br>
@@ -75,16 +88,17 @@ $(function() {
       var $form = $(this);
       var data = $form.serialize();
       var url = $('#my_form').attr('action');
+      
 
-      	console.log(url);
       $.ajax({
 					type: 'post',
 					// dataType: 'json',
 					url: url,
 					data: data,
 					success: function(res) {
-             	$('#result').html(res).fadeOut(15600);
+             	$('#result').html(res).fadeOut(1600);
               $form[0].reset();
+              location.reload();
               // res.each(function(index){
               // 		condole.log(index + " : "+ $(this).text);
               // });
@@ -93,6 +107,24 @@ $(function() {
           }
       });
   });
+
+  $('.btnSupprComment').on('click', function(e) {
+      e.preventDefault();
+
+      var data = $(this).data('delCom');
+      var parent = $(this).parent().parent().parent();
+
+      $.ajax({
+					type: 'post',
+					// dataType: 'json',
+					url: data,
+					success: function(res) {
+              parent.fadeOut('slow').remove;
+              
+          }
+      });
+  });
+
 });
  </script>
 
