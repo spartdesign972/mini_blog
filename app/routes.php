@@ -39,6 +39,13 @@
 
 
 		['GET|POST', '/mail', 'SendMail#mailTo', 'sendmail_mailTo'],
+		
+
+
+		['GET|POST', '/test/[i:id]', 'Default#test', 'default_test'],
+
+
+
 
 
 

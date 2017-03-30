@@ -15,4 +15,9 @@ class DefaultController extends Controller
 		$this->show('Front/default/my_home_page');
 	}
 
+
+	public function test($id){
+		$this->show('Front/default/test', ['id' => $id]);
+	}
+
 }

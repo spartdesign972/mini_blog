@@ -43,8 +43,11 @@
 	<?php endif; ?>
 
 	<h4>Commentaire(s) :</h4>
+
+	<div id="result"></div>
+
 	<?php 
-	if(isset($listCom)){
+	if(isset($listCom)):
 	foreach ($listCom as $key => $Value):?>
 		
 		<div class="well">
@@ -52,9 +55,6 @@
 				<h4>Commentaire : </h4>
 				<p> <?= $Value['content'] ?> </p>
 			</div>
-			<hr>
-
-			<h4>Poster par : <?=$Value['lastname'] ?> </h4>
 
 			<div class="row">
 				<div class="col-sm-8">
@@ -62,7 +62,7 @@
 				</div>
 				<?php if($w_user['role'] === $Value['role']): ?>
 				<div class="col-sm-4">
-					<a href="#" class="btn btn-danger btnSupprComment" data-delCom="<?=$this->url('comment_supprComment', ['id' => $Value['id']])?>">Supprimer</a>
+					<a href="#" class="btn btn-danger btnSupprComment" data-delCom="<?=$this->url('default_test', ['id' => $Value['id']])?>">Supprimer</a>
 				</div>
 			<?php endif; ?>
 			</div>
@@ -71,7 +71,7 @@
 		</div>
 		<br>
 	<?php endforeach;
-	} ?>
+	endif; ?>
 <?php $this->stop('main_content') ?>
 
 
@@ -111,14 +111,18 @@ $(function() {
   $('.btnSupprComment').on('click', function(e) {
       e.preventDefault();
 
-      var data = $(this).data('delCom');
+      var urldat = $(this).data('delCom');
       var parent = $(this).parent().parent().parent();
 
+      console.log(urldat);
+
       $.ajax({
-					type: 'post',
-					// dataType: 'json',
-					url: data,
+					type: 'POST',
+					url: urldat,
+					// data: urldat,
+					dataType: 'html',
 					success: function(res) {
+							// $('#result').html(res);
               parent.fadeOut('slow').remove;
               
           }

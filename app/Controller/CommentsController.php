@@ -46,10 +46,12 @@ class CommentsController extends Controller
 			}
 	}
 
-	public function SupprCommentid($id){
-
+	public function SupprCommentid($id)
+	{
 		$com = new CommentsModel();
+		echo $id;
 		$com->supprComment($id);
-
 	}
+
+
 }
